@@ -3,3 +3,5 @@
 ^README\.Rmd$
 ^LICENSE\.md$
 ^\.github$
+^[\.]?air\.toml$
+^\.vscode$
