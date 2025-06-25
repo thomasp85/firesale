@@ -34,7 +34,11 @@ as.list.firesale_storefront <- function(x, ...) x[names(x)]
 }
 #' @export
 `[[<-.firesale_storefront` <- function(x, i, value) {
-  backend(x)$set(i, value, ns(x))
+  if (is.null(value)) {
+    backend(x)$del(i, ns(x))
+  } else {
+    backend(x)$set(i, value, ns(x))
+  }
   x
 }
 #' @export
