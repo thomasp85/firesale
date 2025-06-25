@@ -16,6 +16,8 @@ knitr::opts_chunk$set(
 # firesale
 
 <!-- badges: start -->
+[![R-CMD-check](https://github.com/thomasp85/firesale/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/thomasp85/firesale/actions/workflows/R-CMD-check.yaml)
+[![Codecov test coverage](https://codecov.io/gh/thomasp85/firesale/graph/badge.svg)](https://app.codecov.io/gh/thomasp85/firesale)
 <!-- badges: end -->
 
 firesale is a plugin for [fiery](http://fiery.data-imaginist.com/) that provides
