@@ -16,3 +16,5 @@ Imports:
     storr
 Suggests: 
     fiery
+URL: https://github.com/thomasp85/firesale
+BugReports: https://github.com/thomasp85/firesale/issues
