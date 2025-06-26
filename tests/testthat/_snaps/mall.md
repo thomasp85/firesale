@@ -1,6 +1,18 @@
 # malls can be created and accessed
 
     Code
+      print(mall)
+    Output
+      <firesale mall (2)>
+      $a
+      test
+      
+      $b
+      test2
+
+---
+
+    Code
       mall$a <- 1
     Condition
       Error in `[[<-`:

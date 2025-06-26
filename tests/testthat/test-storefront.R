@@ -2,6 +2,7 @@ test_that("storefronts can be created and are list-like", {
   backend <- storr::storr(storr::driver_environment())
   sf <- new_storefront("test", backend)
   expect_true(is_storefront(sf))
+  expect_snapshot(print(sf))
   expect_length(sf, 0)
   expect_null(sf$test)
   sf$test <- "TEST"
