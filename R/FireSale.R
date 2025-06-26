@@ -103,9 +103,9 @@ FireSale <- R6::R6Class(
       app$on(
         "before-request",
         function(server, id, request) {
-          self$get_mall(id = id)
+          set_names(list(self$get_mall(id = id)), private$ARGNAME)
         },
-        id = private$ARGNAME
+        id = "firesale_datastore_attach"
       )
       if (!(is.null(private$GCINTERVAL) && is.null(private$MAXAGE))) {
         app$time(
@@ -146,7 +146,11 @@ FireSale <- R6::R6Class(
     },
     run_gc = function() {
       if (!is.null(private$GCINTERVAL)) {
-        last_gc <- private$STORR$mget("timestamp", "_gc_time", missing = as.POSIXct(0))[[1]]
+        last_gc <- private$STORR$mget(
+          "timestamp",
+          "_gc_time",
+          missing = as.POSIXct(0)
+        )[[1]]
         now <- Sys.time()
         if (now - last_gc > private$GCINTERVAL) {
           private$STORR$gc()
