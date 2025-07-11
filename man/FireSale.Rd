@@ -58,6 +58,7 @@ app$attach(ds)
 \item \href{#method-FireSale-new}{\code{FireSale$new()}}
 \item \href{#method-FireSale-format}{\code{FireSale$format()}}
 \item \href{#method-FireSale-get_mall}{\code{FireSale$get_mall()}}
+\item \href{#method-FireSale-shiny_mall}{\code{FireSale$shiny_mall()}}
 \item \href{#method-FireSale-on_attach}{\code{FireSale$on_attach()}}
 \item \href{#method-FireSale-clone}{\code{FireSale$clone()}}
 }
@@ -126,6 +127,31 @@ global and a session-specific storefront
 \if{html}{\out{<div class="arguments">}}
 \describe{
 \item{\code{id}}{The session id of the current session}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-FireSale-shiny_mall"></a>}}
+\if{latex}{\out{\hypertarget{method-FireSale-shiny_mall}{}}}
+\subsection{Method \code{shiny_mall()}}{
+Create a mall from a shiny session object. If the shiny app
+has been launched from a plumber2 server the session id is automatically
+resolved. If not, you must provide an id function that extracts the
+session id from a \link[reqres:Request]{reqres::Request} object.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{FireSale$shiny_mall(session, id_fun = NULL)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{session}}{A ShinySession object}
+
+\item{\code{id_fun}}{A function that can extract the session ID from a \code{Request}
+object. This is handled automatically for shiny apps launched from a
+plumber2 server. The default id function for fiery servers is constructed
+with \code{fiery::session_id_cookie()}}
 }
 \if{html}{\out{</div>}}
 }

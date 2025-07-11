@@ -95,6 +95,31 @@ FireSale <- R6::R6Class(
         )
       )
     },
+    #' @description Create a mall from a shiny session object. If the shiny app
+    #' has been launched from a plumber2 server the session id is automatically
+    #' resolved. If not, you must provide an id function that extracts the
+    #' session id from a [reqres::Request] object.
+    #' @param session A ShinySession object
+    #' @param id_fun A function that can extract the session ID from a `Request`
+    #' object. This is handled automatically for shiny apps launched from a
+    #' plumber2 server. The default id function for fiery servers is constructed
+    #' with `fiery::session_id_cookie()`
+    #'
+    shiny_mall = function(session, id_fun = NULL) {
+      if (is.null(id_fun)) {
+        id_fun <- get0(".__fiery_id_fun__", mode = "function")
+        if (is.null(id_fun)) {
+          cli::cli_abort("{.arg id_fun} must be given or an object {.field .__fiery_id_fun__} must exist on the search path")
+        }
+      }
+      check_function(id_fun)
+      if (!inherits(session, "ShinySession")) {
+        stop_input_type(session, "a ShinySession object")
+      }
+
+      id <- id_fun(reqres$Request$new(session$request))
+      get_mall(id)
+    },
     #' @description Method for use by `fiery` when attached as a plugin. Should
     #' not be called directly.
     #' @param app The fiery server object
