@@ -93,6 +93,7 @@ list-like, but in reality are interfaces to the underlying data store</p>
 <ul><li><p><a href="#method-FireSale-new"><code>FireSale$new()</code></a></p></li>
 <li><p><a href="#method-FireSale-format"><code>FireSale$format()</code></a></p></li>
 <li><p><a href="#method-FireSale-get_mall"><code>FireSale$get_mall()</code></a></p></li>
+<li><p><a href="#method-FireSale-shiny_mall"><code>FireSale$shiny_mall()</code></a></p></li>
 <li><p><a href="#method-FireSale-on_attach"><code>FireSale$on_attach()</code></a></p></li>
 <li><p><a href="#method-FireSale-clone"><code>FireSale$clone()</code></a></p></li>
 </ul></div><p></p><hr><a id="method-FireSale-new"></a><div class="section">
@@ -166,16 +167,42 @@ global and a session-specific storefront</p><div class="section">
 </dl><p></p></div>
 </div>
 
-</div><p></p><hr><a id="method-FireSale-on_attach"></a><div class="section">
-<h3 id="method-on-attach-">Method <code>on_attach()</code><a class="anchor" aria-label="anchor" href="#method-on-attach-"></a></h3>
-<p>Method for use by <code>fiery</code> when attached as a plugin. Should
-not be called directly.</p><div class="section">
+</div><p></p><hr><a id="method-FireSale-shiny_mall"></a><div class="section">
+<h3 id="method-shiny-mall-">Method <code>shiny_mall()</code><a class="anchor" aria-label="anchor" href="#method-shiny-mall-"></a></h3>
+<p>Create a mall from a shiny session object. If the shiny app
+has been launched from a plumber2 server the session id is automatically
+resolved. If not, you must provide an id function that extracts the
+session id from a <a href="https://reqres.data-imaginist.com/reference/Request.html" class="external-link">reqres::Request</a> object.</p><div class="section">
 <h4 id="usage-3">Usage<a class="anchor" aria-label="anchor" href="#usage-3"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">FireSale</span><span class="op">$</span><span class="fu">on_attach</span><span class="op">(</span><span class="va">app</span>, <span class="va">...</span><span class="op">)</span></span></code></pre></div><p></p></div>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">FireSale</span><span class="op">$</span><span class="fu">shiny_mall</span><span class="op">(</span><span class="va">session</span>, id_fun <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
 <h4 id="arguments-3">Arguments<a class="anchor" aria-label="anchor" href="#arguments-3"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>session</code></dt>
+<dd><p>A ShinySession object</p></dd>
+
+
+<dt><code>id_fun</code></dt>
+<dd><p>A function that can extract the session ID from a <code>Request</code>
+object. This is handled automatically for shiny apps launched from a
+plumber2 server. The default id function for fiery servers is constructed
+with <code><a href="https://fiery.data-imaginist.com/reference/session_id_cookie.html" class="external-link">fiery::session_id_cookie()</a></code></p></dd>
+
+
+</dl><p></p></div>
+</div>
+
+</div><p></p><hr><a id="method-FireSale-on_attach"></a><div class="section">
+<h3 id="method-on-attach-">Method <code>on_attach()</code><a class="anchor" aria-label="anchor" href="#method-on-attach-"></a></h3>
+<p>Method for use by <code>fiery</code> when attached as a plugin. Should
+not be called directly.</p><div class="section">
+<h4 id="usage-4">Usage<a class="anchor" aria-label="anchor" href="#usage-4"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">FireSale</span><span class="op">$</span><span class="fu">on_attach</span><span class="op">(</span><span class="va">app</span>, <span class="va">...</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-4">Arguments<a class="anchor" aria-label="anchor" href="#arguments-4"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>app</code></dt>
 <dd><p>The fiery server object</p></dd>
 
@@ -190,12 +217,12 @@ not be called directly.</p><div class="section">
 </div><p></p><hr><a id="method-FireSale-clone"></a><div class="section">
 <h3 id="method-clone-">Method <code>clone()</code><a class="anchor" aria-label="anchor" href="#method-clone-"></a></h3>
 <p>The objects of this class are cloneable with this method.</p><div class="section">
-<h4 id="usage-4">Usage<a class="anchor" aria-label="anchor" href="#usage-4"></a></h4>
+<h4 id="usage-5">Usage<a class="anchor" aria-label="anchor" href="#usage-5"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">FireSale</span><span class="op">$</span><span class="fu">clone</span><span class="op">(</span>deep <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-4">Arguments<a class="anchor" aria-label="anchor" href="#arguments-4"></a></h4>
+<h4 id="arguments-5">Arguments<a class="anchor" aria-label="anchor" href="#arguments-5"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>deep</code></dt>
 <dd><p>Whether to make a deep clone.</p></dd>
 
