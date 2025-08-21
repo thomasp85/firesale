@@ -117,7 +117,7 @@ FireSale <- R6::R6Class(
         stop_input_type(session, "a ShinySession object")
       }
 
-      id <- id_fun(reqres$Request$new(session$request))
+      id <- id_fun(reqres::Request$new(session$request))
       get_mall(id)
     },
     #' @description Method for use by `fiery` when attached as a plugin. Should
