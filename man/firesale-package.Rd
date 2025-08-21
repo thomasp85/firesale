@@ -4,9 +4,9 @@
 \name{firesale-package}
 \alias{firesale}
 \alias{firesale-package}
-\title{firesale: Data Store for 'fiery' web servers}
+\title{firesale: Datastore for 'fiery' Web Servers}
 \description{
-What the package does (one paragraph).
+Provides a persistent datastore for 'fiery' apps. The datastore is build on top of the 'storr' package and can thus be based on a variety of backends. The datastore contains both a global and session-scoped section.
 }
 \seealso{
 Useful links:
@@ -17,7 +17,12 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: Thomas Lin Pedersen \email{thomasp85@gmail.com} (\href{https://orcid.org/0000-0002-5147-4711}{ORCID})
+\strong{Maintainer}: Thomas Lin Pedersen \email{thomas.pedersen@posit.co} (\href{https://orcid.org/0000-0002-5147-4711}{ORCID})
+
+Other contributors:
+\itemize{
+  \item Posit Software, PBC (03wc8by49) [copyright holder, funder]
+}
 
 }
 \keyword{internal}

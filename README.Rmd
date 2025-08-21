@@ -20,10 +20,10 @@ knitr::opts_chunk$set(
 [![Codecov test coverage](https://codecov.io/gh/thomasp85/firesale/graph/badge.svg)](https://app.codecov.io/gh/thomasp85/firesale)
 <!-- badges: end -->
 
-firesale is a plugin for [fiery](http://fiery.data-imaginist.com/) that provides
+firesale is a plugin for [fiery](https://fiery.data-imaginist.com/) that provides
 a (potentially persistent) data store based on path parameters and client id.
 
-It builds upon the [storr](https://richfitz.github.io/storr) package and thus
+It builds upon the [storr](https://richfitz.github.io/storr/) package and thus
 provides a multitude of storage backends to suit your need while providing the
 same interface for your server logic.
 

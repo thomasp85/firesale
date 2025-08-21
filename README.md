@@ -10,21 +10,21 @@
 coverage](https://codecov.io/gh/thomasp85/firesale/graph/badge.svg)](https://app.codecov.io/gh/thomasp85/firesale)
 <!-- badges: end -->
 
-firesale is a plugin for [fiery](http://fiery.data-imaginist.com/) that
+firesale is a plugin for [fiery](https://fiery.data-imaginist.com/) that
 provides a (potentially persistent) data store based on path parameters
 and client id.
 
-It builds upon the [storr](https://richfitz.github.io/storr) package and
-thus provides a multitude of storage backends to suit your need while
-providing the same interface for your server logic.
+It builds upon the [storr](https://richfitz.github.io/storr/) package
+and thus provides a multitude of storage backends to suit your need
+while providing the same interface for your server logic.
 
 ## Installation
 
-`firesale` is still not available on CRAN. In the meantime you can
-install it from gihub using pak
-
 ``` r
-# install.packages("pak")
+# You can install marquee from CRAN
+pak::pak("firesale")
+
+# Or get the development version from Github
 pak::pak("thomasp85/firesale")
 ```
 
