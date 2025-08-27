@@ -7,3 +7,4 @@
 ^\.vscode$
 ^codecov\.yml$
 ^cran-comments\.md$
+^CRAN-SUBMISSION$
