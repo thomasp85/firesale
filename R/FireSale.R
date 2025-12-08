@@ -148,6 +148,10 @@ FireSale <- R6::R6Class(
     #' @field name The name of the plugin
     name = function() {
       "firesale"
+    },
+    #' @field arg_name The name of the argument that will contain the data store
+    arg_name = function() {
+      private$ARGNAME
     }
   ),
   private = list(

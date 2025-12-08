@@ -38,7 +38,7 @@ list-like, but in reality are interfaces to the underlying data store
 # Create a datastore object
 ds <- FireSale$new(storr::driver_environment())
 
-\dontshow{if (requireNamespace("fiery", quietly = TRUE)) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+\dontshow{if (requireNamespace("fiery", quietly = TRUE)) withAutoprint(\{ # examplesIf}
 # Attach it to a fiery server
 app <- fiery::Fire$new()
 
@@ -49,6 +49,8 @@ app$attach(ds)
 \if{html}{\out{<div class="r6-active-bindings">}}
 \describe{
 \item{\code{name}}{The name of the plugin}
+
+\item{\code{arg_name}}{The name of the argument that will contain the data store}
 }
 \if{html}{\out{</div>}}
 }
