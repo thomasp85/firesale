@@ -1,1 +1,1 @@
-Initial release of firesale
+patch release with small addition needed for fireproof package
